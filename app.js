@@ -20,7 +20,7 @@ const originalStory = `
 
 
 // questions to the player
-let questions = [
+let questionArray = [
     'anything you can express',
     'propper noun (first and last name)',
     'nickname for the previous entry',
@@ -40,9 +40,14 @@ let questions = [
 //the values entered by the player
 let userInputs = []; 
 // number of words to replace
-const numberOfQuestions = userInputs.length;
+const numberOfQuestions = questionArray.length;
 
-
+// bucle for inputs
+let questionCounter = 0;
+for (let i = 0; i < numberOfQuestions; i++) {
+    questionCounter++;
+    console.log(questionArray[i] + `(${numberOfQuestions - questionCounter} questions left)`);
+}
 
 
 let newStory = `<p>${userInputs[1]} was the man who invented the ${userInputs[4]}.
@@ -88,3 +93,5 @@ console.log('### originalStory ');
 console.log(originalStory);
 let divOutput = document.querySelector('div.newStory');
 divOutput.innerHTML = newStory;
+let original = document.querySelector('div.original');
+original.innerHTML = originalStory; 
