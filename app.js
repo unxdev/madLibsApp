@@ -47,6 +47,9 @@ let questionCounter = 0;
 for (let i = 0; i < numberOfQuestions; i++) {
     questionCounter++;
     console.log(questionArray[i] + `(${numberOfQuestions - questionCounter} questions left)`);
+    let insertValue = prompt('Enter a ' + questionArray[i]  + ` (${numberOfQuestions - questionCounter} questions left)`);
+    userInputs.push(insertValue);
+    console.log(userInputs.length);
 }
 
 
